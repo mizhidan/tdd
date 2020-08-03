@@ -4,7 +4,10 @@ import java.util.List;
 public class  Mommifier {
     List<Character> vowelList = new ArrayList<>();
 
-    public String mommify(String inputString) {
+    public String mommify(String inputString) throws invalidInputException {
+        if (inputString == null) {
+            throw new invalidInputException();
+        }
         initList(vowelList);
         int vowelCount = 0;
         vowelCount = setVowelCount(inputString, vowelCount);
