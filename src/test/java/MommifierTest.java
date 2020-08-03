@@ -11,4 +11,13 @@ public class MommifierTest {
         assertEquals("kamommyak", mommifiedString2);
     }
 
+    @Test
+    void should_not_insert_mommy_when_vowels_under_thirty_percent_or_not_have_continuous_set_of_vowels() {
+        String notMommifiedString1 = mommifier.mommify("ddmmmm");
+        String notMommifiedString2 = mommifier.mommify("dddssammmm");
+        assertEquals(notMommifiedString1, "ddmmmm");
+        assertEquals(notMommifiedString2, "dddssammmm");
+    }
+
+    
 }
